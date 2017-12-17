@@ -1,36 +1,22 @@
 # mom-predict
 
-FIXME: description
+fun project to prevent thinking from gril's boombs
 
 ## Installation
 
-Download from http://example.com/FIXME.
+Download from https://leiningen.org/.
 
-## Usage
-
-FIXME: explanation
-
-    $ java -jar mom-predict-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
 
 ### Bugs
 
-...
+All of the project
 
-### Any Other Sections
-### That You Think
-### Might be Useful
+## Warning
+
+I am not sure whether I will finish this project or not. Plus, some code are deprecated, so don't reference my code.
+Don't open issues as I am doing this project for fun.
+
 
 ## License
 
-Copyright © 2017 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+[The Romantic WTF public license.](https://github.com/pygy/The-Romantic-WTF-Public-License)
