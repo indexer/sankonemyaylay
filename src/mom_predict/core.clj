@@ -6,10 +6,15 @@
 (defn readcsv []
   (with-open [reader (io/reader "data.csv")]
     (doall
-     (csv/read-csv reader))))  
+     (csv/read-csv reader))))
+
+(defn statusfilter [x]
+  (println (for [i (x)]
+             (last i)
+             )))
 
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (print (count (readcsv))))
+  (statusfilter readcsv))
 
