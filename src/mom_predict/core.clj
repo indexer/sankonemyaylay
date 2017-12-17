@@ -8,10 +8,12 @@
     (doall
      (csv/read-csv reader))))
 
+
+
 (defn statusfilter [x]
-  (println (for [i (x)]
-             (last i)
-             )))
+  (doseq [values (x)]
+    (zipmap [:userid :name :date :status] values)))
+
 
 (defn -main
   "I don't do a whole lot ... yet."
