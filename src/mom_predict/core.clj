@@ -11,8 +11,9 @@
 
 
 (defn statusfilter [x]
-  (doseq [values (x)]
-    (zipmap [:userid :name :date :status] values)))
+  (println (group-by :date (for [values (x)]
+                             (zipmap [:userid :name :date :status] values)))))
+
 
 
 (defn -main
