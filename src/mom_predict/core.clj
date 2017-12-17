@@ -9,15 +9,12 @@
      (csv/read-csv reader))))
 
 
-
-(defn statusfilter [x]
+(defn groupbydate [x]
   (println (group-by :date (for [values (x)]
                              (zipmap [:userid :name :date :status] values)))))
-
-
 
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (statusfilter readcsv))
+  (groupbydate readcsv))
 
