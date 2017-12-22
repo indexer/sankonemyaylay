@@ -10,8 +10,10 @@
 
 
 (defn groupbydate [x]
-  (println (group-by :date (for [values (x)]
-                             (zipmap [:userid :name :date :status] values)))))
+  (group-by :date (into [] (for [record (x)
+                                 :while (seq (first record))]
+                             (zipmap [:no :name :date :status] record)))))
+
 
 (defn -main
   "I don't do a whole lot ... yet."
