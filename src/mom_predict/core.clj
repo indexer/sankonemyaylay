@@ -9,20 +9,23 @@
     (doall
      (csv/read-csv reader))))
 
-(defn selectstatus[statusvalue,x]
+
+(defn selectstatus[statusvalue,filter,total]  
   (println statusvalue
            (format "%3f"
-                   (float ( / (count (get x statusvalue)) (count x))))))
+                   (* (float ( / (count (get filter statusvalue)) (count (total))))100))))
 
-(defn pairwithkey[y]
+
+(defn pairwithkey[row]
   (zipmap [:id :finnumber
-           :passtype :hashnumber :status :date :zg] y))
+           :passtype :hashnumber :status :date :zg] row))
 
 
-(defn mapwithkey [x]
-  (selectstatus "Pending",
-                (group-by :status (into [] (for [record (x) :while (seq (first record))]
-                                             (pairwithkey record))))))
+(defn mapwithkey [totalcsv]
+  (selectstatus "Approved",
+                (group-by :status
+                          (into [] (for [row (totalcsv) :while (seq (first row))]
+                                     (pairwithkey row)))),totalcsv))
 
 
 (defn -main
